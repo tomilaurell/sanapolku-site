@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sanapolku-sovelluksen tietosuojaseloste.">
+    <title>Tietosuoja – Sanapolku</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Siirry sisältöön</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Sanapolku, etusivu">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span class="brand-name">Sanapolku</span>
+        </a>
+        <nav class="site-nav" aria-label="Päävalikko">
+          <ul>
+            <li><a href="index.html">Tuki</a></li>
+            <li><a href="privacy.html" aria-current="page">Tietosuoja</a></li>
+            <li><a href="delete-account.html">Tietojen poistaminen</a></li>
+            <li><a href="community.html">Yhteisösäännöt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="page-title">
+        <div class="section-inner">
+          <h1>Sanapolun tietosuojaseloste</h1>
+          <p>Tässä selosteessa kuvataan, mitä tietoja Sanapolku käsittelee, mihin niitä käytetään ja mitkä tiedot näkyvät muille pelaajille.</p>
+        </div>
+      </header>
+
+      <section class="content-section">
+        <div class="section-inner reading">
+          <p class="metadata">Päivitetty 26.10.2026</p>
+          <h2>Rekisterinpitäjä ja yhteys</h2>
+          <p>Sanapolun julkaisija ja tietojen käsittelystä vastaava taho on <strong>T&amp;M Laurell</strong>. Tietosuojaa koskevat kysymykset ja pyynnöt voi lähettää osoitteeseen <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20-%20tietosuoja">laurelltm@gmail.com</a>.</p>
+
+          <h2>Nimimerkin rekisteröinti</h2>
+          <p>Kilpailupelaamista varten sovellus varaa pelaajan valitseman yksilöllisen nimimerkin. Rekisteröinti ei pyydä sähköpostiosoitetta, salasanaa tai oikeaa nimeä. Sovellus lähettää palvelulle julkisen UUID-pelaajatunnisteen, salaisen tunnisteen ja nimimerkin. Palvelin säilyttää salaisesta tunnisteesta vain yksisuuntaisen tiivisteen.</p>
+          <p>Sanapolussa ei ole sähköpostiin tai puhelinnumeroon perustuvaa tilin palautusta. Jos laitteen suojattuun tallennukseen tallennettu salainen tunniste katoaa, vanhaa nimimerkkivarausta ei voida nykyisellä toteutuksella palauttaa automaattisesti.</p>
+
+          <h2>Mitä tietoja käsitellään?</h2>
+          <dl class="definition-list">
+            <dt>Pelaajatunniste</dt>
+            <dd>Sovellus luo satunnaisen julkisen UUID-tunnisteen kilpailupelaamista varten. Tunniste ei itsessään sisällä nimeä, sähköpostiosoitetta tai laitteen tunnistetietoja.</dd>
+
+            <dt>Nimimerkki</dt>
+            <dd>Pelaaja valitsee yksilöllisen 2–24 merkin nimimerkin. Nimimerkki näkyy julkisissa kierrostuloksissa. Nimimerkiksi ei pidä kirjoittaa oikeaa nimeä tai muuta henkilötietoa.</dd>
+
+            <dt>Salainen tunniste</dt>
+            <dd>Sovellus luo pelaajatunnisteeseen liittyvän satunnaisen salaisuuden ja säilyttää sen laitteen suojatussa tallennuksessa. Palvelin säilyttää siitä yksisuuntaisen tiivisteen tunnisteen tarkistamista varten. Salaisuus ei ole julkinen, eikä sitä pidä lähettää tuelle.</dd>
+
+            <dt>Pelitiedot</dt>
+            <dd>Kilpailukierroksista lähetetään pelitila, kierroksen ja laudan tunniste, pisteet, hyväksyttyjen eri sanojen määrä, pisteytysversio sekä mahdollinen sanapituusjakauma. Löydettyjä sanoja ei lähetetä palvelimelle.</dd>
+
+            <dt>Paikalliset tiedot</dt>
+            <dd>Kaverit, estetyt pelaajatunnisteet, saavutukset, asetukset, oma kehitys ja enintään 100 viimeisintä kilpailukierrosta säilytetään laitteella. Myös harjoitteluhistoria ja tarkemmat sanatiedot ovat paikallisia.</dd>
+
+            <dt>Tukiviestit ja ilmoitukset</dt>
+            <dd>Jos otat yhteyttä sähköpostitse, T&amp;M Laurell käsittelee sähköpostiosoitteen, viestin sisällön ja mahdolliset liitteet pyynnön tai ilmoituksen hoitamiseksi. Älä lähetä salaista tunnistetta tai tarpeettomia henkilötietoja.</dd>
+          </dl>
+
+          <h2>Mihin tietoja käytetään?</h2>
+          <ul class="plain-list">
+            <li>yksilöllisen nimimerkin varaamiseen ja muuttamiseen;</li>
+            <li>kilpailutuloksen vastaanottamiseen ja oikeaan pelaajatunnisteeseen liittämiseen;</li>
+            <li>yhteisten kierrostulosten muodostamiseen ja näyttämiseen;</li>
+            <li>väärinkäytösten selvittämiseen sekä palvelun turvalliseen ylläpitoon;</li>
+            <li>käyttäjän pyytämän tuen, oikaisun tai poistamisen käsittelyyn.</li>
+          </ul>
+
+          <h2>Käsittelyn oikeusperusteet</h2>
+          <p>Nimimerkin, pelaajatunnisteen ja kilpailutietojen käsittely perustuu pyytämäsi Sanapolku-palvelun tarjoamiseen ja sitä koskevan sopimuksen täytäntöönpanoon. Palvelun turvallisuus, väärinkäytösten ehkäisy, tekninen ylläpito sekä yhteisösääntöjen valvonta perustuvat T&amp;M Laurellin oikeutettuun etuun pitää palvelu turvallisena ja toimintakykyisenä. Tuki- ja tietosuojapyynnöt käsitellään pyynnön hoitamiseksi ja soveltuvien lakisääteisten velvoitteiden täyttämiseksi.</p>
+
+          <h2>Mitä muut pelaajat näkevät?</h2>
+          <p>Julkaistussa kilpailutuloksessa näkyvät julkinen UUID-pelaajatunniste, nimimerkki, pisteet ja sanamäärä. Tulokseen voi sisältyä myös sanapituusjakauma. Julkinen tulosaineisto on saatavilla enintään 24 tuntia kierroksen tuloksen julkaisuhetkestä. Nimimerkki säilyy tuloksessa siinä muodossa, jossa se oli julkaisuhetkellä.</p>
+          <p>Sähköpostiosoite, laitteen suojattu salaisuus, kaverilista, saavutukset, paikallinen historia ja löydetyt sanat eivät kuulu julkiseen tulosaineistoon.</p>
+
+          <h2>Palveluntarjoajat</h2>
+          <p>Sanapolku käyttää tietojen käsittelijöinä Supabase-palvelua kilpailutietojen ja nimimerkkivarausten vastaanottamiseen sekä Amazon Web Servicesin CloudFront-palvelua julkaistujen kierrostulosten välittämiseen. Tietoa siirretään sovelluksen ja palvelujen välillä HTTPS-yhteydellä. Näiden palveluntarjoajien oma tekninen käsittely määräytyy niiden sopimusten ja käytäntöjen mukaan.</p>
+
+          <h2>Mitä Sanapolku ei käytä?</h2>
+          <p>Nykyisessä toteutuksessa ei ole mainoksia, käyttäjäseurantaa, analytiikkaa, sovelluksen sisäisiä maksuja tai maksutietojen käsittelyä. Sanapolku ei käytä pelaajan yhteystietoja, sijaintia tai puhelimen yhteystietoluetteloa.</p>
+
+          <h2>Säilytys ja poistaminen</h2>
+          <ul class="plain-list">
+            <li>Pelaajatunniste, nimimerkki ja salaisen tunnisteen tiiviste säilyvät palvelussa, kunnes profiili poistetaan.</li>
+            <li>Yksityiset pistetiedot säilyvät enintään kierroksen 24 tunnin elinkaaren ajan tai kunnes profiili poistetaan.</li>
+            <li>Julkaistu, muuttumaton kierrostulos on saatavilla enintään 24 tuntia julkaisuhetkestä. Ennen poistoa julkaistu UUID ja nimimerkki voivat näkyä siinä tämän ajan loppuun.</li>
+            <li>Poiston jälkeen palvelu säilyttää 24 tuntia vain poistetun UUID:n estomerkinnän, jotta viivästynyt pyyntö ei voi luoda samaa tunnistetta uudelleen. Merkintä ei sisällä nimimerkkiä eikä salaisuuden tiivistettä.</li>
+            <li>Laitteen oma historia ja tulosvälimuisti on rajattu enintään 100 kierrokseen. Tiedot poistuvat myös, kun käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</li>
+          </ul>
+          <p>Tekniset palvelulokit säilytetään vain turvallisuuden, häiriöiden selvittämisen ja palveluntarjoajien lakisääteisten velvoitteiden edellyttämän ajan. Niiden täsmällinen kesto riippuu kulloisestakin Supabase- ja AWS-palveluasetuksesta, eikä yhtä kiinteää lokien säilytysaikaa ole vahvistettu. Ajantasaisen tiedon voi pyytää rekisterinpitäjältä.</p>
+          <p>Palvelintietojen poistamista voi pyytää <a href="delete-account.html">poistopyyntösivun ohjeilla</a>. Sähköpostitse tehtävä pyyntö käsitellään operaattorin toimesta. Version 1.0 sovellukseen valmisteltu itsepalvelupoisto tulee käyttöön vasta, kun sitä tukeva palvelinpäivitys ja sovellusversio on julkaistu.</p>
+
+          <h2>Oikeutesi</h2>
+          <p>Sinulla on tilanteesta riippuen oikeus saada pääsy omiin henkilötietoihisi, pyytää virheellisen tiedon oikaisua tai tiedon poistamista, rajoittaa käsittelyä, vastustaa oikeutettuun etuun perustuvaa käsittelyä sekä saada itse toimittamasi tiedot siirrettävässä muodossa. Voit käyttää oikeuksiasi lähettämällä viestin osoitteeseen <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20-%20tietopyynt%C3%B6">laurelltm@gmail.com</a>. Voit myös tehdä valituksen Tietosuojavaltuutetun toimistolle.</p>
+          <p>Älä koskaan lähetä laitteen salaista tunnistetta. Pyynnön toteuttaminen voi edellyttää julkista UUID-pelaajatunnistetta ja turvallisia lisätietoja, joilla pyyntö voidaan yhdistää oikeaan nimimerkkivaraukseen.</p>
+
+          <h2>Muutokset tähän selosteeseen</h2>
+          <p>Selostetta päivitetään, jos Sanapolun tietojen käsittely, palveluntarjoajat tai julkaisutapa muuttuvat. Uusin versio julkaistaan tällä sivulla ja merkitään päivityspäivällä.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div><strong>Sanapolku</strong><br><span>Julkaisija T&amp;M Laurell · versio 1.0 julkaisun valmistelussa</span></div>
+        <ul class="footer-links">
+          <li><a href="index.html">Tuki</a></li>
+          <li><a href="delete-account.html">Tietojen poistaminen</a></li>
+          <li><a href="community.html">Yhteisösäännöt</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

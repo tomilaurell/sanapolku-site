@@ -99,7 +99,8 @@
           <ul class="plain-list">
             <li>Pelaajatunniste, nimimerkki ja salaisen tunnisteen tiiviste säilyvät palvelussa, kunnes profiili poistetaan.</li>
             <li>Yksityiset pistetiedot säilyvät enintään kierroksen 24 tunnin elinkaaren ajan tai kunnes profiili poistetaan.</li>
-            <li>Julkaistu, muuttumaton kierrostulos on saatavilla enintään 24 tuntia julkaisuhetkestä. Ennen poistoa julkaistu UUID ja nimimerkki voivat näkyä siinä tämän ajan loppuun. Myös tuloksen jo ladanneen toisen laitteen paikallinen välimuistikopio voi säilyä samaan vanhenemishetkeen asti.</li>
+            <li>Julkaistu, muuttumaton kierrostulos on saatavilla palvelimelta ja julkisesta CDN-jakelusta enintään 24 tuntia julkaisuhetkestä. Ennen poistoa julkaistu UUID ja nimimerkki voivat näkyä siinä tämän ajan loppuun.</li>
+            <li>Palvelimelta tehty poisto ei poista tulosta muiden laitteiden paikallisista tiedoista. Tuloksen jo ladanneen laitteen kopio voi säilyä, kunnes se poistuu enintään 100 kierroksen historia- tai välimuistirajan vuoksi, käyttäjä tyhjentää sovellustiedot tai sovellus poistetaan.</li>
             <li>Poiston jälkeen palvelu säilyttää 24 tuntia vain poistetun UUID:n estomerkinnän, jotta viivästynyt pyyntö ei voi luoda samaa tunnistetta uudelleen. Merkintä ei sisällä nimimerkkiä eikä salaisuuden tiivistettä.</li>
             <li>Laitteen oma historia ja tulosvälimuisti on rajattu enintään 100 kierrokseen. Tiedot poistuvat myös, kun käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</li>
           </ul>

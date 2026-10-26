@@ -82,7 +82,9 @@
         <div class="section-inner reading">
           <h2>Mitä poistetaan?</h2>
           <p>Palvelimelta poistetaan pelaajarivi, nimimerkkivaraus, salaisen tunnisteen tiiviste ja vielä yksityisinä olevat pistetiedot. Poistettu nimimerkki vapautuu uudelleen varattavaksi. Laitteelta poistetaan profiili, historia, kaverit, estot, saavutukset, lähetysjono ja tallennetut tulokset.</p>
-          <p>Ennen poistoa julkaistu muuttumaton kierrostulos voi sisältää UUID:n ja nimimerkin oman, enintään 24 tunnin saatavuusaikansa loppuun. Myös tuloksen jo ladannut toinen laite voi säilyttää paikallisen välimuistikopion samaan vanhenemishetkeen asti. Poiston jälkeen palvelimelle jää 24 tunniksi vain UUID-estomerkintä viivästyneiden pyyntöjen estämiseksi. Se ei sisällä nimimerkkiä eikä salaisuuden tiivistettä.</p>
+          <p>Ennen poistoa julkaistu muuttumaton kierrostulos voi sisältää UUID:n ja nimimerkin palvelimen ja julkisen CDN-jakelun enintään 24 tunnin saatavuusajan loppuun.</p>
+          <p>Palvelimelta tehty poisto ei poista tulosta muiden laitteiden paikallisista tiedoista. Tuloksen jo ladanneen laitteen kopio voi säilyä, kunnes se poistuu enintään 100 kierroksen historia- tai välimuistirajan vuoksi, käyttäjä tyhjentää sovellustiedot tai sovellus poistetaan.</p>
+          <p>Poiston jälkeen palvelimelle jää 24 tunniksi vain UUID-estomerkintä viivästyneiden pyyntöjen estämiseksi. Se ei sisällä nimimerkkiä eikä salaisuuden tiivistettä.</p>
 
           <h2>Uusi alku poistamisen jälkeen</h2>
           <p>Onnistuneen poiston jälkeen Sanapolku palaa ensimmäiseen rekisteröintiin ja luo uuden rekisteröimättömän UUID:n sekä salaisen tunnisteen. Vanhaa profiilia ei yhdistetä uuteen tunnisteeseen.</p>

@@ -36,7 +36,8 @@
         <h2>Retention and deletion</h2><ul class="plain-list">
           <li>The player ID, nickname and secret hash remain until the profile is deleted.</li>
           <li>Private score data remains for no more than the round’s 24-hour lifecycle or until profile deletion.</li>
-          <li>An immutable public result remains available for no more than 24 hours. A UUID and nickname published before deletion may remain until that period ends. A device that already downloaded the result may keep its local cached copy until the same expiry.</li>
+          <li>An immutable public result remains available from the server and public CDN for no more than 24 hours after publication. A UUID and nickname published before deletion may remain there until that period ends.</li>
+          <li>Server-side deletion does not remove a result from other devices’ local data. A device that already downloaded the result may retain its copy until it is evicted by the 100-round history or cache limit, the user clears app data, or the app is uninstalled.</li>
           <li>After deletion, only a UUID tombstone remains for 24 hours to prevent delayed requests from recreating the ID. It contains no nickname or secret hash.</li>
           <li>Local history and result cache are each limited to 100 rounds and are also removed when app data is cleared or the app is uninstalled.</li>
         </ul><p>Technical service logs are retained only as needed for security, diagnostics and provider legal obligations. The exact duration depends on current Supabase and AWS settings; no single fixed log-retention period has been confirmed. You can ask the controller for current details.</p><p>Delete the profile and related service data in the app by following the <a href="delete-account.html">deletion instructions</a>. Deletion is not requested by email: the app securely verifies it with the secret stored on the device.</p>

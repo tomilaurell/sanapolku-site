@@ -64,7 +64,9 @@ a:hover {
 }
 
 a:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+button:focus-visible,
+input:focus-visible {
   outline: 3px solid var(--sage-deep);
   outline-offset: 4px;
   border-radius: 4px;
@@ -289,6 +291,22 @@ ol {
   color: white;
 }
 
+.button.danger {
+  border-color: var(--error);
+  background: var(--error);
+}
+
+.button.danger:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--error) 86%, black);
+}
+
+.button:disabled {
+  border-color: rgb(62 86 56 / 28%);
+  background: rgb(62 86 56 / 16%);
+  color: rgb(2 23 13 / 58%);
+  cursor: not-allowed;
+}
+
 .button.secondary {
   background: rgb(255 254 249 / 68%);
   color: var(--forest-dark);
@@ -436,6 +454,96 @@ ol {
 .callout strong {
   display: block;
   margin-bottom: 0.25rem;
+}
+
+.deletion-section {
+  align-items: start;
+}
+
+.deletion-form {
+  display: grid;
+  gap: 0.85rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid rgb(62 86 56 / 22%);
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.deletion-label {
+  color: var(--forest-dark);
+  font-weight: 800;
+}
+
+.deletion-input {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.7rem 0.8rem;
+  border: 2px solid rgb(62 86 56 / 36%);
+  border-radius: 9px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.deletion-input[aria-invalid="true"] {
+  border-color: var(--error);
+}
+
+.form-hint {
+  margin-bottom: 0.4rem;
+  color: var(--forest);
+  font-size: 0.96rem;
+}
+
+.deletion-confirmation {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-block: 0.35rem;
+  font-weight: 700;
+}
+
+.deletion-confirmation input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.18rem 0 0;
+  flex: 0 0 auto;
+  accent-color: var(--error);
+}
+
+.deletion-form .button {
+  width: 100%;
+  font: inherit;
+}
+
+.deletion-status {
+  min-height: 1.65em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.deletion-cooldown {
+  min-height: 1.5em;
+  margin: -0.5rem 0 0;
+  color: var(--forest);
+  font-size: 0.96rem;
+}
+
+.deletion-status[data-kind="error"] {
+  color: var(--error);
+}
+
+.deletion-status[data-kind="success"],
+.deletion-status[data-kind="progress"] {
+  color: var(--forest-dark);
+}
+
+.deletion-form noscript {
+  padding: 0.85rem;
+  border-radius: 8px;
+  background: var(--birch-light);
 }
 
 .definition-list {

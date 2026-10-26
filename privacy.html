@@ -67,7 +67,7 @@
             <dd>Kilpailukierroksista lähetetään pelitila, kierroksen ja laudan tunniste, pisteet, hyväksyttyjen eri sanojen määrä, pisteytysversio sekä mahdollinen sanapituusjakauma. Löydettyjä sanoja ei lähetetä palvelimelle.</dd>
 
             <dt>Paikalliset tiedot</dt>
-            <dd>Kaverit, estetyt pelaajatunnisteet, saavutukset, asetukset, oma kehitys ja enintään 100 viimeisintä kilpailukierrosta säilytetään laitteella. Myös harjoitteluhistoria ja tarkemmat sanatiedot ovat paikallisia.</dd>
+            <dd>Kaverit, estetyt pelaajatunnisteet, saavutukset, asetukset ja oma kehitys säilytetään laitteella. Kilpailuhistoria ja harjoitteluhistoria ovat erillisiä: kumpikin sisältää enintään 100 kierrosta. Tarkemmat sanatiedot ovat paikallisia. Ladattujen julkisten tulosten välimuistissa on enintään 100 merkintää.</dd>
 
             <dt>Tukiviestit ja ilmoitukset</dt>
             <dd>Jos otat yhteyttä sähköpostitse, T&amp;M Laurell käsittelee sähköpostiosoitteen, viestin sisällön ja mahdolliset liitteet pyynnön tai ilmoituksen hoitamiseksi. Älä lähetä salaista tunnistetta tai tarpeettomia henkilötietoja.</dd>
@@ -100,15 +100,15 @@
             <li>Pelaajatunniste, nimimerkki ja salaisen tunnisteen tiiviste säilyvät palvelussa, kunnes profiili poistetaan.</li>
             <li>Yksityiset pistetiedot säilyvät enintään kierroksen 24 tunnin elinkaaren ajan tai kunnes profiili poistetaan.</li>
             <li>Julkaistu, muuttumaton kierrostulos on saatavilla palvelimelta ja julkisesta CDN-jakelusta enintään 24 tuntia julkaisuhetkestä. Ennen poistoa julkaistu UUID ja nimimerkki voivat näkyä siinä tämän ajan loppuun.</li>
-            <li>Palvelimelta tehty poisto ei poista tulosta muiden laitteiden paikallisista tiedoista. Tuloksen jo ladanneen laitteen kopio voi säilyä, kunnes se poistuu enintään 100 kierroksen historia- tai välimuistirajan vuoksi, käyttäjä tyhjentää sovellustiedot tai sovellus poistetaan.</li>
+            <li>Palvelimelta tehty poisto ei poista tulosta muiden laitteiden paikallisista tiedoista. Tuloksen jo ladanneen laitteen kopio voi säilyä, kunnes se poistuu laitteen enintään 100 merkinnän julkisen tulosvälimuistin vuoksi, käyttäjä tyhjentää sovellustiedot tai sovellus poistetaan.</li>
             <li>Poiston jälkeen palvelu säilyttää 24 tuntia vain poistetun UUID:n estomerkinnän, jotta viivästynyt pyyntö ei voi luoda samaa tunnistetta uudelleen. Merkintä ei sisällä nimimerkkiä eikä salaisuuden tiivistettä.</li>
-            <li>Laitteen oma historia ja tulosvälimuisti on rajattu enintään 100 kierrokseen. Tiedot poistuvat myös, kun käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</li>
+            <li>Laitteen kilpailuhistoria ja harjoitteluhistoria sisältävät kumpikin enintään 100 kierrosta. Julkisten tulosten välimuisti sisältää erikseen enintään 100 merkintää. Tiedot poistuvat myös, kun käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</li>
           </ul>
           <p>Tekniset palvelulokit säilytetään vain turvallisuuden, häiriöiden selvittämisen ja palveluntarjoajien lakisääteisten velvoitteiden edellyttämän ajan. Niiden täsmällinen kesto riippuu kulloisestakin Supabase- ja AWS-palveluasetuksesta, eikä yhtä kiinteää lokien säilytysaikaa ole vahvistettu. Ajantasaisen tiedon voi pyytää rekisterinpitäjältä.</p>
-          <p>Profiili ja siihen liittyvät palvelintiedot poistetaan sovelluksessa <a href="delete-account.html">poisto-ohjeen mukaisesti</a>. Poistamiseen ei käytetä sähköpostia: sovellus vahvistaa pyynnön turvallisesti laitteella säilytettävällä salaisella tunnisteella.</p>
+          <p>Profiili ja siihen liittyvät palvelintiedot voi poistaa sovelluksessa tai henkilökohtaisella poistokoodilla verkossa <a href="delete-account.html">poisto-ohjeen mukaisesti</a>. Poistamiseen ei käytetä sähköpostia.</p>
 
           <h2>Oikeutesi</h2>
-          <p>Sinulla on tilanteesta riippuen oikeus saada pääsy omiin henkilötietoihisi, pyytää virheellisen tiedon oikaisua, rajoittaa käsittelyä, vastustaa oikeutettuun etuun perustuvaa käsittelyä sekä saada itse toimittamasi tiedot siirrettävässä muodossa. Näitä pyyntöjä ja tietosuojakysymyksiä varten voit kirjoittaa osoitteeseen <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20-%20tietosuoja">laurelltm@gmail.com</a>. Profiilin poistaminen tehdään sovelluksessa. Voit myös tehdä valituksen Tietosuojavaltuutetun toimistolle.</p>
+          <p>Sinulla on tilanteesta riippuen oikeus saada pääsy omiin henkilötietoihisi, pyytää virheellisen tiedon oikaisua, rajoittaa käsittelyä, vastustaa oikeutettuun etuun perustuvaa käsittelyä sekä saada itse toimittamasi tiedot siirrettävässä muodossa. Näitä pyyntöjä ja tietosuojakysymyksiä varten voit kirjoittaa osoitteeseen <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20-%20tietosuoja">laurelltm@gmail.com</a>. Profiilin poistaminen tehdään sovelluksessa tai poistosivun henkilökohtaisella poistokoodilla, ei sähköpostitse. Voit myös tehdä valituksen Tietosuojavaltuutetun toimistolle.</p>
           <p>Älä koskaan lähetä laitteen salaista tunnistetta. Pyynnön toteuttaminen voi edellyttää julkista UUID-pelaajatunnistetta ja turvallisia lisätietoja, joilla pyyntö voidaan yhdistää oikeaan nimimerkkivaraukseen.</p>
 
           <h2>Muutokset tähän selosteeseen</h2>

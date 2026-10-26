@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ohje Sanapolun profiilin ja siihen liittyvien tietojen poistamiseen sovelluksessa.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://ufjzgusccbigwrdfcpan.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+    <meta name="description" content="Ohje Sanapolun profiilin ja siihen liittyvien tietojen poistamiseen sovelluksessa tai henkilökohtaisella poistokoodilla.">
     <title>Tietojen poistaminen – Sanapolku</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="alternate" hreflang="fi" href="delete-account.html">
     <link rel="alternate" hreflang="en" href="en/delete-account.html">
     <link rel="alternate" hreflang="sv" href="sv/delete-account.html">
+    <script defer src="deletion.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Siirry sisältöön</a>
@@ -38,7 +40,7 @@
       <header class="page-title">
         <div class="section-inner">
           <h1>Poista Sanapolun profiili</h1>
-          <p>Profiili ja siihen liittyvät palvelin- ja laitetiedot poistetaan turvallisesti suoraan Sanapolku-sovelluksessa. Poistopyyntöä ei lähetetä sähköpostilla.</p>
+          <p>Poista profiili ja siihen liittyvät tiedot Sanapolku-sovelluksessa tai poista palvelinprofiili tämän sivun henkilökohtaisella poistokoodilla. Poistopyyntöä ei lähetetä sähköpostilla.</p>
         </div>
       </header>
 
@@ -64,6 +66,37 @@
         </div>
       </section>
 
+      <section class="content-section">
+        <div class="section-inner two-column deletion-section">
+          <div class="reading">
+            <span class="fact-label">Vaihtoehto ilman sovellusta</span>
+            <h2>Poista palvelinprofiili poistokoodilla</h2>
+            <p>Sanapolku näyttää Asetusten Tietosuoja ja tuki -kohdassa henkilökohtaisen <strong>spdel1-poistokoodin</strong>. Säilytä koodi yksityisenä: sillä voi poistaa palvelinprofiilisi, mutta ei pelata, lähettää tuloksia tai varata nimimerkkiä.</p>
+            <p>Voit käyttää koodia tällä sivulla, jos sovellus ei enää ole käytettävissä. Verkkopoisto poistaa palvelinprofiilin ja vapauttaa nimimerkin, mutta se ei tyhjennä sovellustietoja laitteeltasi tai muiden laitteiden rajatuista paikallisista välimuisteista.</p>
+          </div>
+          <form class="deletion-form" autocomplete="off" novalidate data-deletion-form
+            data-deletion-invalid="Tarkista poistokoodi. Käytä täsmälleen sovelluksen näyttämää spdel1-koodia."
+            data-deletion-busy="Poistetaan…"
+            data-deletion-submit="Poista palvelinprofiili pysyvästi"
+            data-deletion-progress="Poistetaan palvelinprofiilia…"
+            data-deletion-success="Palvelinprofiili poistettiin. Nimimerkki vapautui uudelleen varattavaksi."
+            data-deletion-rejected="Poistokoodia ei hyväksytty. Tarkista koodi ja yritä uudelleen."
+            data-deletion-rate-limited="Poistopyyntöjä on tehty liian nopeasti. Odota ennen uutta yritystä."
+            data-deletion-cooldown="Voit yrittää uudelleen {seconds} sekunnin kuluttua."
+            data-deletion-result="Palvelimen vastausta ei voitu vahvistaa. Älä oleta poiston onnistuneen; yritä uudelleen."
+            data-deletion-network="Poistoa ei voitu vahvistaa verkkoyhteyden vuoksi. Yritä uudelleen.">
+            <label class="deletion-label" for="deletion-code-fi">Poistokoodi</label>
+            <input id="deletion-code-fi" class="deletion-input" type="password" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" required data-deletion-code aria-describedby="deletion-hint-fi">
+            <p id="deletion-hint-fi" class="form-hint">Koodi alkaa merkeillä <strong>spdel1:</strong>. Sitä ei tallenneta tähän selaimeen.</p>
+            <label class="deletion-confirmation"><input type="checkbox" required data-deletion-confirm> Ymmärrän, että palvelinprofiili poistetaan pysyvästi eikä toimintoa voi perua.</label>
+            <button class="button danger" type="submit" disabled data-deletion-submit>Poista palvelinprofiili pysyvästi</button>
+            <p class="deletion-status" data-deletion-status role="status" aria-live="polite"></p>
+            <p class="deletion-cooldown" data-deletion-cooldown></p>
+            <noscript>Poistokoodin käyttö vaatii JavaScriptin. Voit poistaa profiilin Sanapolku-sovelluksen Asetuksissa.</noscript>
+          </form>
+        </div>
+      </section>
+
       <section class="content-section sage">
         <div class="section-inner two-column">
           <div class="reading">
@@ -83,7 +116,7 @@
           <h2>Mitä poistetaan?</h2>
           <p>Palvelimelta poistetaan pelaajarivi, nimimerkkivaraus, salaisen tunnisteen tiiviste ja vielä yksityisinä olevat pistetiedot. Poistettu nimimerkki vapautuu uudelleen varattavaksi. Laitteelta poistetaan profiili, historia, kaverit, estot, saavutukset, lähetysjono ja tallennetut tulokset.</p>
           <p>Ennen poistoa julkaistu muuttumaton kierrostulos voi sisältää UUID:n ja nimimerkin palvelimen ja julkisen CDN-jakelun enintään 24 tunnin saatavuusajan loppuun.</p>
-          <p>Palvelimelta tehty poisto ei poista tulosta muiden laitteiden paikallisista tiedoista. Tuloksen jo ladanneen laitteen kopio voi säilyä, kunnes se poistuu enintään 100 kierroksen historia- tai välimuistirajan vuoksi, käyttäjä tyhjentää sovellustiedot tai sovellus poistetaan.</p>
+          <p>Palvelimelta tehty poisto ei poista tulosta muiden laitteiden paikallisista tiedoista. Tuloksen jo ladanneen laitteen kopio voi säilyä, kunnes se poistuu laitteen enintään 100 merkinnän julkisen tulosvälimuistin vuoksi, käyttäjä tyhjentää sovellustiedot tai sovellus poistetaan.</p>
           <p>Poiston jälkeen palvelimelle jää 24 tunniksi vain UUID-estomerkintä viivästyneiden pyyntöjen estämiseksi. Se ei sisällä nimimerkkiä eikä salaisuuden tiivistettä.</p>
 
           <h2>Uusi alku poistamisen jälkeen</h2>

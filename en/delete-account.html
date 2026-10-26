@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="How to delete your Sanapolku profile and related data in the app.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://ufjzgusccbigwrdfcpan.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+    <meta name="description" content="How to delete your Sanapolku profile and related data in the app or with a personal deletion code.">
     <title>Delete profile – Sanapolku</title><link rel="stylesheet" href="../styles.css">
     <link rel="alternate" hreflang="fi" href="../delete-account.html"><link rel="alternate" hreflang="en" href="delete-account.html"><link rel="alternate" hreflang="sv" href="../sv/delete-account.html">
+    <script defer src="../deletion.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -14,15 +16,38 @@
       <nav class="language-nav" aria-label="Language"><a href="../delete-account.html" lang="fi" hreflang="fi">FI</a><a href="delete-account.html" lang="en" hreflang="en" aria-current="true">EN</a><a href="../sv/delete-account.html" lang="sv" hreflang="sv">SV</a></nav>
     </div></header>
     <main id="main">
-      <header class="page-title"><div class="section-inner"><h1>Delete your Sanapolku profile</h1><p>Delete the profile and related server and device data securely in the Sanapolku app. Deletion requests are not sent by email.</p></div></header>
+      <header class="page-title"><div class="section-inner"><h1>Delete your Sanapolku profile</h1><p>Delete the profile and related data in the Sanapolku app, or delete the server profile with a personal code on this page. Deletion requests are not sent by email.</p></div></header>
       <section class="content-section"><div class="section-inner"><div class="steps">
         <article class="step"><span class="step-label">1. Open Settings</span><h3>Go to Privacy and support</h3><p>Open Sanapolku Settings and select <strong>Privacy and support</strong>.</p></article>
         <article class="step"><span class="step-label">2. Choose deletion</span><h3>Open Delete profile</h3><p>Read the consequences and select <strong>Continue to deletion</strong>.</p></article>
         <article class="step"><span class="step-label">3. Confirm</span><h3>Delete permanently</h3><p>Confirm again with <strong>Delete profile permanently</strong>. The app tells you when the server has accepted the deletion.</p></article>
       </div></div></section>
+      <section class="content-section"><div class="section-inner two-column deletion-section">
+        <div class="reading"><span class="fact-label">Alternative without the app</span><h2>Delete the server profile with a deletion code</h2><p>Sanapolku shows your personal <strong>spdel1 deletion code</strong> under Privacy and support in Settings. Keep it private: it can delete your server profile, but it cannot be used to play, submit scores or reserve a nickname.</p><p>Use the code here if the app is no longer available. Web deletion removes the server profile and releases the nickname, but it does not clear app data from your device or bounded local caches on other devices.</p></div>
+        <form class="deletion-form" autocomplete="off" novalidate data-deletion-form
+          data-deletion-invalid="Check the deletion code. Use the exact spdel1 code shown by the app."
+          data-deletion-busy="Deleting…"
+          data-deletion-submit="Permanently delete server profile"
+          data-deletion-progress="Deleting the server profile…"
+          data-deletion-success="The server profile was deleted. The nickname is available for reservation again."
+          data-deletion-rejected="The deletion code was not accepted. Check the code and try again."
+          data-deletion-rate-limited="Deletion attempts were sent too quickly. Wait before trying again."
+          data-deletion-cooldown="You can try again in {seconds} seconds."
+          data-deletion-result="The server response could not be verified. Do not assume deletion succeeded; try again."
+          data-deletion-network="Deletion could not be verified because of a network problem. Try again.">
+          <label class="deletion-label" for="deletion-code-en">Deletion code</label>
+          <input id="deletion-code-en" class="deletion-input" type="password" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" required data-deletion-code aria-describedby="deletion-hint-en">
+          <p id="deletion-hint-en" class="form-hint">The code starts with <strong>spdel1:</strong>. It is not stored in this browser.</p>
+          <label class="deletion-confirmation"><input type="checkbox" required data-deletion-confirm> I understand that the server profile will be permanently deleted and this action cannot be undone.</label>
+          <button class="button danger" type="submit" disabled data-deletion-submit>Permanently delete server profile</button>
+          <p class="deletion-status" data-deletion-status role="status" aria-live="polite"></p>
+          <p class="deletion-cooldown" data-deletion-cooldown></p>
+          <noscript>Using a deletion code requires JavaScript. You can delete the profile in Sanapolku Settings.</noscript>
+        </form>
+      </div></section>
       <section class="content-section sage"><div class="section-inner two-column"><div class="reading"><h2>An internet connection is required</h2><p>The app verifies deletion with the secret stored securely on the device. If the connection fails before server confirmation, the old profile and local data remain so you can retry.</p></div><aside class="info-panel important"><span class="fact-label">Permanent action</span><h3>Deletion cannot be undone</h3><p>A deleted nickname reservation, competition history, friends and achievements cannot be restored.</p></aside></div></section>
       <section class="content-section"><div class="section-inner reading">
-        <h2>What is deleted?</h2><p>The player row, nickname reservation, secret hash and private score data are deleted from the server. The deleted nickname becomes available for reservation again. The profile, history, friends, blocks, achievements, submission queue and saved results are deleted from the device.</p><p>An immutable result published before deletion may contain the UUID and nickname until the server and public CDN availability period of no more than 24 hours ends.</p><p>Server-side deletion does not remove a result from other devices’ local data. A device that already downloaded the result may retain its copy until it is evicted by the 100-round history or cache limit, the user clears app data, or the app is uninstalled.</p><p>After deletion, only a UUID tombstone remains on the server for 24 hours to prevent delayed requests. It contains no nickname or secret hash.</p>
+        <h2>What is deleted?</h2><p>The player row, nickname reservation, secret hash and private score data are deleted from the server. The deleted nickname becomes available for reservation again. The profile, history, friends, blocks, achievements, submission queue and saved results are deleted from the device.</p><p>An immutable result published before deletion may contain the UUID and nickname until the server and public CDN availability period of no more than 24 hours ends.</p><p>Server-side deletion does not remove a result from other devices’ local data. A device that already downloaded the result may retain its copy until it is evicted from that device’s public-result cache of up to 100 entries, the user clears app data, or the app is uninstalled.</p><p>After deletion, only a UUID tombstone remains on the server for 24 hours to prevent delayed requests. It contains no nickname or secret hash.</p>
         <h2>A new start</h2><p>After successful deletion, Sanapolku returns to first registration and creates a new unregistered UUID and secret. The old profile is not linked to the new identity.</p>
         <h2>If the deletion menu is missing</h2><p>Profile deletion is included in Sanapolku version 1.0. Update to the latest published app version. The ordinary support address does not accept profile deletion requests.</p>
       </div></section>

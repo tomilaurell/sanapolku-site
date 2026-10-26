@@ -6,6 +6,9 @@
     <meta name="description" content="Sanapolku-sovelluksen tietosuojaseloste.">
     <title>Tietosuoja – Sanapolku</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="alternate" hreflang="fi" href="privacy.html">
+    <link rel="alternate" hreflang="en" href="en/privacy.html">
+    <link rel="alternate" hreflang="sv" href="sv/privacy.html">
   </head>
   <body>
     <a class="skip-link" href="#main">Siirry sisältöön</a>
@@ -22,6 +25,11 @@
             <li><a href="delete-account.html">Tietojen poistaminen</a></li>
             <li><a href="community.html">Yhteisösäännöt</a></li>
           </ul>
+        </nav>
+        <nav class="language-nav" aria-label="Kieli">
+          <a href="privacy.html" lang="fi" hreflang="fi" aria-current="true">FI</a>
+          <a href="en/privacy.html" lang="en" hreflang="en">EN</a>
+          <a href="sv/privacy.html" lang="sv" hreflang="sv">SV</a>
         </nav>
       </div>
     </header>
@@ -91,15 +99,15 @@
           <ul class="plain-list">
             <li>Pelaajatunniste, nimimerkki ja salaisen tunnisteen tiiviste säilyvät palvelussa, kunnes profiili poistetaan.</li>
             <li>Yksityiset pistetiedot säilyvät enintään kierroksen 24 tunnin elinkaaren ajan tai kunnes profiili poistetaan.</li>
-            <li>Julkaistu, muuttumaton kierrostulos on saatavilla enintään 24 tuntia julkaisuhetkestä. Ennen poistoa julkaistu UUID ja nimimerkki voivat näkyä siinä tämän ajan loppuun.</li>
+            <li>Julkaistu, muuttumaton kierrostulos on saatavilla enintään 24 tuntia julkaisuhetkestä. Ennen poistoa julkaistu UUID ja nimimerkki voivat näkyä siinä tämän ajan loppuun. Myös tuloksen jo ladanneen toisen laitteen paikallinen välimuistikopio voi säilyä samaan vanhenemishetkeen asti.</li>
             <li>Poiston jälkeen palvelu säilyttää 24 tuntia vain poistetun UUID:n estomerkinnän, jotta viivästynyt pyyntö ei voi luoda samaa tunnistetta uudelleen. Merkintä ei sisällä nimimerkkiä eikä salaisuuden tiivistettä.</li>
             <li>Laitteen oma historia ja tulosvälimuisti on rajattu enintään 100 kierrokseen. Tiedot poistuvat myös, kun käyttäjä tyhjentää sovelluksen tiedot tai poistaa sovelluksen.</li>
           </ul>
           <p>Tekniset palvelulokit säilytetään vain turvallisuuden, häiriöiden selvittämisen ja palveluntarjoajien lakisääteisten velvoitteiden edellyttämän ajan. Niiden täsmällinen kesto riippuu kulloisestakin Supabase- ja AWS-palveluasetuksesta, eikä yhtä kiinteää lokien säilytysaikaa ole vahvistettu. Ajantasaisen tiedon voi pyytää rekisterinpitäjältä.</p>
-          <p>Palvelintietojen poistamista voi pyytää <a href="delete-account.html">poistopyyntösivun ohjeilla</a>. Sähköpostitse tehtävä pyyntö käsitellään operaattorin toimesta. Version 1.0 sovellukseen valmisteltu itsepalvelupoisto tulee käyttöön vasta, kun sitä tukeva palvelinpäivitys ja sovellusversio on julkaistu.</p>
+          <p>Profiili ja siihen liittyvät palvelintiedot poistetaan sovelluksessa <a href="delete-account.html">poisto-ohjeen mukaisesti</a>. Poistamiseen ei käytetä sähköpostia: sovellus vahvistaa pyynnön turvallisesti laitteella säilytettävällä salaisella tunnisteella.</p>
 
           <h2>Oikeutesi</h2>
-          <p>Sinulla on tilanteesta riippuen oikeus saada pääsy omiin henkilötietoihisi, pyytää virheellisen tiedon oikaisua tai tiedon poistamista, rajoittaa käsittelyä, vastustaa oikeutettuun etuun perustuvaa käsittelyä sekä saada itse toimittamasi tiedot siirrettävässä muodossa. Voit käyttää oikeuksiasi lähettämällä viestin osoitteeseen <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20-%20tietopyynt%C3%B6">laurelltm@gmail.com</a>. Voit myös tehdä valituksen Tietosuojavaltuutetun toimistolle.</p>
+          <p>Sinulla on tilanteesta riippuen oikeus saada pääsy omiin henkilötietoihisi, pyytää virheellisen tiedon oikaisua, rajoittaa käsittelyä, vastustaa oikeutettuun etuun perustuvaa käsittelyä sekä saada itse toimittamasi tiedot siirrettävässä muodossa. Näitä pyyntöjä ja tietosuojakysymyksiä varten voit kirjoittaa osoitteeseen <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20-%20tietosuoja">laurelltm@gmail.com</a>. Profiilin poistaminen tehdään sovelluksessa. Voit myös tehdä valituksen Tietosuojavaltuutetun toimistolle.</p>
           <p>Älä koskaan lähetä laitteen salaista tunnistetta. Pyynnön toteuttaminen voi edellyttää julkista UUID-pelaajatunnistetta ja turvallisia lisätietoja, joilla pyyntö voidaan yhdistää oikeaan nimimerkkivaraukseen.</p>
 
           <h2>Muutokset tähän selosteeseen</h2>
@@ -110,7 +118,7 @@
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <div><strong>Sanapolku</strong><br><span>Julkaisija T&amp;M Laurell · versio 1.0 julkaisun valmistelussa</span></div>
+        <div><strong>Sanapolku</strong><br><span>Julkaisija T&amp;M Laurell · versio 1.0 julkaistaan pian</span></div>
         <ul class="footer-links">
           <li><a href="index.html">Tuki</a></li>
           <li><a href="delete-account.html">Tietojen poistaminen</a></li>

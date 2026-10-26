@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sanapolku privacy notice.">
+    <title>Privacy – Sanapolku</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="alternate" hreflang="fi" href="../privacy.html"><link rel="alternate" hreflang="en" href="privacy.html"><link rel="alternate" hreflang="sv" href="../sv/privacy.html">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Sanapolku home"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">Sanapolku</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><ul><li><a href="index.html">Support</a></li><li><a href="privacy.html" aria-current="page">Privacy</a></li><li><a href="delete-account.html">Delete profile</a></li><li><a href="community.html">Community rules</a></li></ul></nav>
+      <nav class="language-nav" aria-label="Language"><a href="../privacy.html" lang="fi" hreflang="fi">FI</a><a href="privacy.html" lang="en" hreflang="en" aria-current="true">EN</a><a href="../sv/privacy.html" lang="sv" hreflang="sv">SV</a></nav>
+    </div></header>
+    <main id="main">
+      <header class="page-title"><div class="section-inner"><h1>Sanapolku privacy notice</h1><p>This notice explains what data Sanapolku processes, why it is used and what is visible to other players.</p></div></header>
+      <section class="content-section"><div class="section-inner reading">
+        <p class="metadata">Updated 26 October 2026</p>
+        <h2>Controller and contact</h2><p>The publisher and data controller is <strong>T&amp;M Laurell</strong>. Privacy questions and requests other than profile deletion can be sent to <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20privacy">laurelltm@gmail.com</a>.</p>
+        <h2>Nickname registration</h2><p>Competition play reserves a unique nickname chosen by the player. Registration does not request an email address, password or real name. The app sends a public UUID player ID, a player secret and the nickname to the service. The server stores only a one-way hash of the secret.</p><p>There is no email- or phone-based account recovery. If the secret stored in protected device storage is lost, the old nickname reservation cannot be restored automatically.</p>
+        <h2>Data processed</h2><dl class="definition-list">
+          <dt>Player ID</dt><dd>A random public UUID used for competition play. It does not itself contain a name, email address or device identifier.</dd>
+          <dt>Nickname</dt><dd>A unique nickname of 2–24 characters chosen by the player and shown in public round results. Do not use a real name or other personal data.</dd>
+          <dt>Player secret</dt><dd>A random secret stored in protected device storage. The server stores a one-way hash for verification. The secret is not public and must not be sent to support.</dd>
+          <dt>Game data</dt><dd>Competition mode, round and board identifiers, score, distinct word count, scoring version and an optional word-length distribution. Found words are not sent to the server.</dd>
+          <dt>Local data</dt><dd>Friends, blocked player IDs, achievements, settings, progress and up to 100 recent competition rounds. Practice history and detailed word data remain local.</dd>
+          <dt>Support messages and reports</dt><dd>If you contact support, T&amp;M Laurell processes your email address, message and attachments to handle the request. Do not send a player secret or unnecessary personal data.</dd>
+        </dl>
+        <h2>Purposes and legal bases</h2><p>The nickname, player ID and competition data are processed to provide the service you request and perform the related agreement. Security, abuse prevention, technical maintenance and community-rule enforcement rely on T&amp;M Laurell’s legitimate interest in keeping the service safe and operational. Support and privacy requests are processed to handle your request and meet applicable legal obligations.</p>
+        <h2>What other players see</h2><p>A published result shows the public UUID, nickname, score and word count, and may include a word-length distribution. It is available for no more than 24 hours after publication. The nickname remains as it was when the result was published.</p><p>Email addresses, the player secret, friends, achievements, local history and found words are not included in public results.</p>
+        <h2>Service providers</h2><p>Sanapolku uses Supabase to receive competition data and nickname reservations and Amazon Web Services CloudFront to deliver published round results. Data travels over HTTPS. Provider-side technical processing follows their applicable agreements and practices.</p>
+        <h2>What Sanapolku does not use</h2><p>There are no ads, tracking, analytics, in-app purchases or payment processing. Sanapolku does not use contacts, location or the device address book.</p>
+        <h2>Retention and deletion</h2><ul class="plain-list">
+          <li>The player ID, nickname and secret hash remain until the profile is deleted.</li>
+          <li>Private score data remains for no more than the round’s 24-hour lifecycle or until profile deletion.</li>
+          <li>An immutable public result remains available for no more than 24 hours. A UUID and nickname published before deletion may remain until that period ends. A device that already downloaded the result may keep its local cached copy until the same expiry.</li>
+          <li>After deletion, only a UUID tombstone remains for 24 hours to prevent delayed requests from recreating the ID. It contains no nickname or secret hash.</li>
+          <li>Local history and result cache are each limited to 100 rounds and are also removed when app data is cleared or the app is uninstalled.</li>
+        </ul><p>Technical service logs are retained only as needed for security, diagnostics and provider legal obligations. The exact duration depends on current Supabase and AWS settings; no single fixed log-retention period has been confirmed. You can ask the controller for current details.</p><p>Delete the profile and related service data in the app by following the <a href="delete-account.html">deletion instructions</a>. Deletion is not requested by email: the app securely verifies it with the secret stored on the device.</p>
+        <h2>Your rights</h2><p>Depending on the circumstances, you may have rights of access, rectification, restriction, objection to legitimate-interest processing and portability of data you provided. For those requests and privacy questions, contact <a href="mailto:laurelltm@gmail.com?subject=Sanapolku%20privacy">laurelltm@gmail.com</a>. Profile deletion is performed in the app. You may also lodge a complaint with the Finnish Data Protection Ombudsman.</p><p>Never send the player secret. A request may require the public UUID and safe additional information to locate the correct nickname reservation.</p>
+        <h2>Changes</h2><p>This notice is updated when Sanapolku’s processing, providers or publication method changes. The latest version is published here with an update date.</p>
+      </div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><div><strong>Sanapolku</strong><br><span>Publisher T&amp;M Laurell · version 1.0 coming soon</span></div><ul class="footer-links"><li><a href="index.html">Support</a></li><li><a href="delete-account.html">Delete profile</a></li><li><a href="community.html">Community rules</a></li></ul></div></footer>
+  </body>
+</html>
